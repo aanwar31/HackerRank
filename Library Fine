@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int d1,m1,y1;
+    int d2,m2,y2;
+    int late_fee=0;
+    scanf("%2d %2d %4d",&d1,&m1,&y1);
+    scanf("%2d %2d %4d",&d2,&m2,&y2);
+    if(d1>d2&&m1==m2){
+        late_fee=15*(d1-d2);
+        printf("%d",late_fee);
+    }
+    else if(m1>m2&&y1==y2){
+        late_fee=500*(m1-m2);
+        printf("%d",late_fee);
+    }
+    else if(y1>y2){
+        late_fee=10000;
+        printf("%d",late_fee);
+    }
+    else
+        printf("0");
+    
+    return 0;
+}
