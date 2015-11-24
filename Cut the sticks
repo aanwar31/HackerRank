@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        ArrayList<Integer> list= new ArrayList<Integer>();
+        ArrayList<Integer> new_list= new ArrayList<Integer>();
+        
+        Scanner sc=new Scanner(System.in);
+        int n,item;
+        n=sc.nextInt();
+        for(int i=0;i<n;i++){
+            item=sc.nextInt();
+            list.add(item);
+        }
+        
+        int count=list.size();
+        while(list.size()!=0){
+           
+            int min=Collections.min(list);
+            count=list.size();
+            System.out.printf("%d\n",count);
+            for(int i=0;i<list.size();i++){
+      
+                new_list.add(list.get(i)-min);
+            
+                    
+            }
+            new_list.removeAll(Collections.singleton(0)); //To remove 0 from new_list
+           
+            
+           list.clear();            //clear list
+           list.addAll(new_list);   // fill the list with new_list
+           new_list.clear();        //clear new_list
+          
+      }
+            
+        
+        
+            
+    }
+}
