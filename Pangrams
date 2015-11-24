@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int hash[150]={0};
+    int flag,n,i;
+    char str[10000];
+    gets(str);
+    char t;
+    for(i=0;str[i]!='\0';i++){
+        t=tolower(str[i]);
+        n=(int)t;
+        if(n>0){
+            hash[n]++;
+            
+        }
+    }
+    flag=1;
+    for(i=97;i<123;i++){
+        if(hash[i]==0){
+            flag=0;
+        }
+    }
+    if(flag==1)
+        printf("pangram\n");
+    else
+        printf("not pangram\n");
+    return 0;
+}
