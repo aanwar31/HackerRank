@@ -1,0 +1,30 @@
+#include <iostream>
+#include<ctype.h>
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+int main() {
+	// your code goes here
+	string str="A,amir*Anwar";
+	int l=str.size();
+	int i=0;
+	while(i<l){
+		if(!isalpha(str[i])){
+			i++;
+		}
+		else if(!isalpha(str[l])){
+			l--;
+		}
+		else{
+			char temp=str[i];
+			str[i]=str[l];
+			str[l]=temp;
+			i++;
+			l--;
+		}
+	}
+	cout<<str;
+	return 0;
+}
